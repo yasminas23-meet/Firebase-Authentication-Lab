@@ -5,7 +5,16 @@
     <title>Title</title>
 </head>
 <body>
+
     Great Job!
-    <button type="submit" formaction="/signin.html"></button>
+    <form method="POST" action="/add_tweet">
+        <label> title </label>
+        <input type="text"  name="title" required>
+        <label> text </label>
+        <input type="text" name="text" maxlength="280">
+    </form>
+
+    <form action="signup.html" method="get" id="form1">
+        <button type="submit" formaction="/signup">signout</button>
 </body>
 </html>
