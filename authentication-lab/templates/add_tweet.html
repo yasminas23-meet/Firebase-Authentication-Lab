@@ -7,11 +7,12 @@
 <body>
 
     Great Job!
-    <form method="POST" action="/add_tweet">
+    <form method="POST" action="/all_tweets">
         <label> title </label>
         <input type="text"  name="title" required>
         <label> text </label>
         <input type="text" name="text" maxlength="280">
+        <button type="submit" formaction="/all_tweets">submit</button>
     </form>
 
     <form action="signup.html" method="get" id="form1">

@@ -6,6 +6,11 @@
 	<title></title>
 </head>
 <body>
-
+ <ul> {% for tweet in tweets %}
+ <li> {{tweets[tweet]['title']}} </li>
+ <li> {{tweets[tweet]['text']}} </li>
+ 
+ {% endfor %}
+</ul>
 </body>
 </html>

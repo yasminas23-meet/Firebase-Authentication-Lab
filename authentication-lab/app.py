@@ -9,7 +9,8 @@ firebaseConfig = {
   "storageBucket": "firelab-5438d.appspot.com",
   "messagingSenderId": "345681661251",
   "appId": "1:345681661251:web:224f5d12b310a37e25f3f6",
-  "measurementId": "G-ZZXEY8J1BR", "databaseURL" : "https://firelab-5438d-default-rtdb.europe-west1.firebasedatabase.app"
+  "measurementId": "G-ZZXEY8J1BR", 
+  "databaseURL" : "https://firelab-5438d-default-rtdb.europe-west1.firebasedatabase.app"
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
@@ -67,12 +68,8 @@ def add_tweet():
 
 @app.route("/all_tweets")
 def all_tweets():
-    tweets = db.child(tweet).get().val()
-    return render_template("tweet.html", tweets = tweets)
-
-
-
-
+    tweets =db.child("tweet").get().val()
+    return render_template("tweets.html", tweets = tweets)
 
 
 @app.route('/signout')
@@ -80,7 +77,7 @@ def signout():
     login_session['user'] = None
     auth.current_user = None
     return redirect(url_for('signin'))
-
+ 
 
 
 if __name__ == '__main__':
